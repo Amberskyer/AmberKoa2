@@ -9,6 +9,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@tensorflow-models/posenet": "^0.2.3",
+    "@tensorflow/tfjs": "^0.13.4",
+    "bcrypt": "^3.0.2",
     "debug": "^2.6.3",
     "ejs": "^2.6.1",
     "kcors": "^2.2.2",
@@ -16,6 +19,7 @@
     "koa-bodyparser": "^3.2.0",
     "koa-compress": "^3.0.0",
     "koa-convert": "^1.2.0",
+    "koa-favicon": "^2.0.1",
     "koa-json": "^2.0.2",
     "koa-jwt": "^3.5.1",
     "koa-logger": "^2.0.1",
@@ -26,7 +30,9 @@
     "koa-views": "^5.2.1",
     "mysql2": "^1.6.4",
     "pug": "^2.0.0-rc.1",
-    "sequelize": "^4.41.2"
+    "sequelize": "^4.41.2",
+    "superagent": "^4.0.0-beta.5",
+    "superagent-proxy": "^2.0.0"
   },
   "devDependencies": {
     "mysql": "^2.16.0",

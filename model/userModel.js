@@ -2,15 +2,16 @@ const Mysql = require('../sqldb/index'); // 引入MySQL数据库
 
 const User = Mysql.User;// 将Sequelize与表结构对应
 
-var userModel = {
-    getUserById: async function (id) {
+class userModel {
+    static async getUserById(id) {
         return await User.findOne({
             where: {
                 id
             }
         })
-    },
-    getUserByName: async function (username) {
+    }
+
+    static async getUserByName(username) {
         return await User.findOne({
             where: {
                 username

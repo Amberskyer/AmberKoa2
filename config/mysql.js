@@ -1,4 +1,4 @@
-var config = {
+const config = {
     koa2: {
         dbname: 'koa2',
         uname: 'root',

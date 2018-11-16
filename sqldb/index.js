@@ -3,7 +3,7 @@
 // 引入模块
 const Sequelize = require('sequelize');
 // 读取配置
-const mysqlConfig = require('../config/mysql-config');
+const mysqlConfig = require('../config/mysql');
 const koa2Config = mysqlConfig.koa2
 // 根据配置实例化seq
 var db = {
@@ -14,6 +14,7 @@ var db = {
         pool: koa2Config.pool,
     }),
 };
+
 //用户数据库
 db.User = db.koa2.import('../schema/user.js');
 
