@@ -1,5 +1,5 @@
 const config = {
-    jwtSecret:'jwtSecret'
+    jwtSecret:'mizuna-rei'
 }
 
 module.exports = config;

@@ -9,6 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@alicloud/sms-sdk": "^1.1.6",
     "@tensorflow-models/posenet": "^0.2.3",
     "@tensorflow/tfjs": "^0.13.4",
     "bcrypt": "^3.0.2",
@@ -24,7 +25,7 @@
     "koa-jwt": "^3.5.1",
     "koa-logger": "^2.0.1",
     "koa-onerror": "^1.2.1",
-    "koa-router": "^7.1.1",
+    "koa-router": "^7.4.0",
     "koa-static": "^3.0.0",
     "koa-swig": "^2.2.1",
     "koa-views": "^5.2.1",

@@ -1,6 +1,6 @@
 const router = require('koa-router')();
 
-var user = require("./auth");
+const user = require("./auth");
 
 // router.prefix('/api/v2')
 router.use(user.routes(), user.allowedMethods())
