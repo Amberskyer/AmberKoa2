@@ -34,8 +34,8 @@ app.use(views(__dirname + '/views', {
 /**
  * 自定义中间件
  */
-const pv = require('./middleware/koa-pv')
-app.use(pv())
+const abToken = require('./middleware/ab-token')
+app.use(abToken())
 
 
 /**o

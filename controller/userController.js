@@ -1,4 +1,4 @@
-const userModel = require('../model/userModel.js'); // 引入user的表结构
+const userModel = require('../model/userModel'); // 引入user的表结构
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
 const serverConfig = require('../config/server')
@@ -82,6 +82,7 @@ class userController {
      * @returns {Promise.<void>}
      */
     static async getUserInfo(ctx) {
+
         const id = ctx.params.id; // 获取url里传过来的参数里的id
         const user = await
             userModel.findUserById(id);
@@ -128,7 +129,8 @@ class userController {
                     name: newUser.username,
                     // exp: Math.floor(Date.now() / 1000) + 24 * 60 * 60 //1 hours
                 }
-                const token = jwt.sign(userToken, serverConfig.jwtSecret, {expiresIn: '1h'})
+                const secret = serverConfig.jwtSecret; // 指定密钥，这是之后用来判断token合法性的标志
+                const token = jwt.sign(userToken, secret, {expiresIn: '1h'})
 
                 ctx.body = {
                     code: 1,

@@ -17,5 +17,7 @@ var db = {
 
 //用户数据库
 db.User = db.koa2.import('../schema/user.js');
+db.Folder = db.koa2.import('../schema/folder.js');
+db.File = db.koa2.import('../schema/file.js');
 
 module.exports = db;

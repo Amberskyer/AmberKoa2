@@ -1,6 +1,6 @@
 'use strict'
 module.exports = function (sequelize, DataTypes) {
-    var User = sequelize.define('user', {
+    var Folder = sequelize.define('folder', {
             id: {
                 field: 'id',
                 type: DataTypes.INTEGER,
@@ -8,13 +8,29 @@ module.exports = function (sequelize, DataTypes) {
                 primaryKey: true,
                 autoIncrement: true
             },
-            username: {
-                field: 'username',
+
+            name: {
+                field: 'name',
                 type: DataTypes.INTEGER,
                 allowNull: false,
             },
-            password: {
-                field: 'password',
+            parentId: {
+                field: 'parent_id',
+                type: DataTypes.INTEGER,
+                allowNull: false,
+            },
+            intro: {
+                field: 'intro',
+                type: DataTypes.INTEGER,
+                allowNull: true,
+            },
+            logo: {
+                field: 'logo',
+                type: DataTypes.INTEGER,
+                allowNull: true,
+            },
+            userId: {
+                field: 'user_id',
                 type: DataTypes.INTEGER,
                 allowNull: false,
             },
@@ -35,9 +51,9 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         {
-            tableName: 'user',
+            tableName: 'folder',
             timestamps: false,
             freezeTableName: true
         });
-    return User
+    return Folder
 };
