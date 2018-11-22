@@ -62,6 +62,7 @@ class fileController {
     static async createFile(ctx) {
         const File = ctx.request.body
         if (data.foderId && data.name) {
+
             const File = await fileModel.findFileByName(File.name, File.foderId, ctx.user.id)
             if (existUser) {
                 ctx.body = {

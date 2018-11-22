@@ -10,7 +10,7 @@ class fileModel {
      * @returns {Promise.<boolean>}
      */
     static async findFileList(option, userId) {
-        const folderId = option.folderId || 0
+        const folderId = option.folderId || 2
         const name = option.name || ''
         const page = option.page || 1
         const pageSize = option.pageSize || null

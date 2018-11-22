@@ -43,9 +43,9 @@ app.use(abToken())
  */
 const jwt = require('koa-jwt');
 const serverConfig = require('./config/server');
-app.use(jwt({secret: serverConfig.jwtSecret}).unless({
-    path: [/^\/api\/v1\/register/,/^\/api\/v1\/login/] //数组中的路径不需要通过jwt验证
-}))
+// app.use(jwt({secret: serverConfig.jwtSecret}).unless({
+//     path: [/^\/api\/v1\/register/,/^\/api\/v1\/login/] //数组中的路径不需要通过jwt验证
+// }))
 
 
 

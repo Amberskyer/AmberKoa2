@@ -13,6 +13,11 @@ module.exports = function (sequelize, DataTypes) {
                 type: DataTypes.INTEGER,
                 allowNull: false,
             },
+            userinfoid: {
+                field: 'user_info_id',
+                type: DataTypes.INTEGER,
+                allowNull: false,
+            },
             password: {
                 field: 'password',
                 type: DataTypes.INTEGER,

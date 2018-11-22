@@ -1,7 +1,9 @@
 const userModel = require('../model/userModel'); // 引入user的表结构
+const userSchema = require('../schema/user'); // 引入user的表结构
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
 const serverConfig = require('../config/server')
+const { request, summary, query, path, body, tags } = require('koa-swagger-decorator')
 
 
 class userController {
@@ -59,6 +61,12 @@ class userController {
      * @param ctx
      * @returns {Promise.<void>}
      */
+    // @request('get', '/user/list')
+    // @summary('get user list')
+    // @testTag
+    // @query({
+    //     // type: { type: '', required: true, default: 1, description: 'type' },
+    // })
     static async getUserList(ctx) {
         const user = await userModel.findUserList();
         if (user) {

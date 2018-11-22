@@ -17,7 +17,14 @@ var db = {
 
 //用户数据库
 db.User = db.koa2.import('../schema/user.js');
+db.UserInfo = db.koa2.import('../schema/userInfo.js');
 db.Folder = db.koa2.import('../schema/folder.js');
 db.File = db.koa2.import('../schema/file.js');
+
+//一对一
+db.User.hasOne(db.UserInfo)
+db.UserInfo.belongsTo(db.User)
+db.User.hasMany(db.Folder)
+db.Folder.hasMany(db.File)
 
 module.exports = db;

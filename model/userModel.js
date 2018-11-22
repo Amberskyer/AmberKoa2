@@ -1,6 +1,8 @@
 const Mysql = require('../sqldb/index'); // 引入MySQL数据库
 
 const User = Mysql.User;// 将Sequelize与表结构对应
+const UserInfo = Mysql.UserInfo;// 将Sequelize与表结构对应
+const Folder = Mysql.Folder;// 将Sequelize与表结构对应
 
 class userModel {
 
@@ -14,7 +16,8 @@ class userModel {
             where: {
                 // id
             },
-            limit:3
+            include: [{model: UserInfo}, {model: Folder}],
+            limit: 3
         })
     }
 
@@ -27,7 +30,8 @@ class userModel {
         return await User.findOne({
             where: {
                 id
-            }
+            },
+            include: [{model: UserInfo}, {model: Folder}]
         })
     }
 
@@ -41,7 +45,8 @@ class userModel {
         return await User.findOne({
             where: {
                 username
-            }
+            },
+            include: [{model: UserInfo}, {model: Folder}]
         })
     }
 

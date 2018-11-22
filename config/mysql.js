@@ -2,8 +2,8 @@ const config = {
     koa2: {
         dbname: 'koa2',
         uname: 'root',
-        upwd: '123456',
-        host: '127.0.0.1',
+        upwd: '12345678',
+        host: '47.74.128.254',
         port: 3306,
         dialect: 'mysql',
         pool: {
