@@ -11,12 +11,16 @@
   "dependencies": {
     "@alicloud/sms-sdk": "^1.1.6",
     "@tensorflow-models/posenet": "^0.2.3",
-    "@tensorflow/tfjs": "^0.13.4",
+    "@tensorflow/tfjs": "^0.13.5",
+    "art-template": "^4.13.2",
     "bcrypt": "^3.0.2",
+    "cheerio": "^1.0.0-rc.2",
     "debug": "^2.6.3",
     "ejs": "^2.6.1",
+    "html-minifier": "^3.5.21",
     "kcors": "^2.2.2",
-    "koa": "^2.2.0",
+    "koa": "^2.6.2",
+    "koa-art-template": "^1.1.1",
     "koa-bodyparser": "^3.2.0",
     "koa-compress": "^3.0.0",
     "koa-convert": "^1.2.0",
@@ -24,20 +28,22 @@
     "koa-json": "^2.0.2",
     "koa-jwt": "^3.5.1",
     "koa-logger": "^2.0.1",
+    "koa-multer": "^1.0.2",
     "koa-onerror": "^1.2.1",
     "koa-router": "^7.4.0",
     "koa-static": "^3.0.0",
     "koa-swagger-decorator": "^1.5.11",
     "koa-swig": "^2.2.1",
     "koa-views": "^5.2.1",
+    "log4js": "^3.0.6",
     "mysql2": "^1.6.4",
     "pug": "^2.0.0-rc.1",
     "sequelize": "^4.41.2",
-    "superagent": "^4.0.0-beta.5",
-    "superagent-proxy": "^2.0.0",
+    "superagent": "^4.0.0",
+    "superagent-proxy": "^2.0.0"
   },
   "devDependencies": {
     "mysql": "^2.16.0",
-    "nodemon": "^1.8.1"
+    "nodemon": "^1.18.7"
   }
 }

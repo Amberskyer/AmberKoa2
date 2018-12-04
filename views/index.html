@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{title}}
+
+{{each userInfo.folders}}
+<p>{{$index}}</p>
+<p>{{$value.name}}</p>
+<img src="{{$value.logo}}" style="width: 300px;height: 300px"/>
+{{/each}}
+
+<img src="{{userInfo.user_info.logo}}"/>
+</body>
+</html>

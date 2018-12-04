@@ -16,12 +16,14 @@ class fileController {
         const option = ctx.request.query
         const list = await fileModel.findFileList(option, ctx.user.id);
         if (list) {
+            ctx.status = 200
             ctx.body = {
                 success: true,
                 retDsc: '查询成功',
                 ret: list
             }
         } else {
+            ctx.status = 404
             ctx.body = {
                 success: false,
                 retDsc: '查询失败',
@@ -40,12 +42,14 @@ class fileController {
         const id = ctx.params.id; // 获取url里传过来的参数里的id
         const info = await fileModel.findFileById(id);
         if (info) {
+            ctx.status = 200
             ctx.body = {
                 success: true,
                 retDsc: '查询成功',
                 ret: info
             }
         } else {
+            ctx.status = 404
             ctx.body = {
                 success: false,
                 retDsc: '查询失败',
@@ -72,6 +76,7 @@ class fileController {
             } else {
                 await fileModel.createFile(File)
                 const newUser = await fileModel.findUserByName(File.name, File.foderId, ctx.user.id)
+                ctx.status = 200
                 ctx.body = {
                     code: 1,
                     message: '创建成功',
@@ -84,6 +89,7 @@ class fileController {
 
             }
         } else {
+            ctx.status = 501
             ctx.body = {
                 code: -1,
                 message: '参数错误'

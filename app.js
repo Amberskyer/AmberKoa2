@@ -1,5 +1,6 @@
 const Koa = require('koa')
 const app = new Koa()
+const path=require('path');
 
 /**
  * favicon图标
@@ -23,13 +24,24 @@ app.use(bodyparser({
 }))
 app.use(require('koa-static')(__dirname + '/public'))
 
+// /**
+//  * 设置模板语言
+//  */
+// const views = require('koa-views')
+// app.use(views(__dirname + '/views', {
+//     extension: 'swig'
+// }))
+
 /**
- * 设置模板语言
+ * 配置 koa-art-template模板引擎
  */
-const views = require('koa-views')
-app.use(views(__dirname + '/views', {
-    extension: 'swig'
-}))
+const render = require('koa-art-template');
+render(app, {
+    root: path.join(__dirname, 'views'),   // 视图的位置
+    extname: '.html',  // 后缀名
+    debug: process.env.NODE_ENV !== 'production'  //是否开启调试模式
+});
+
 
 /**
  * 自定义中间件
@@ -48,15 +60,11 @@ const serverConfig = require('./config/server');
 // }))
 
 
-
-
 /**
  * 设置挂载路由
  */
 const router = require('koa-router')();
 app.use(router.routes());
-
-
 
 
 /**
@@ -93,14 +101,10 @@ app.use(Compress({
 }));
 
 
-
-
-
 /**
  * 用来实现访问静态资源，当我们使用webpack进行生产模式的打包之后，都放到了dist目录下，这个目录就作为Koa静态文件服务的目录：
  */
 const staticServer = require('koa-static');
-const path = require('path');
 // 将webpack打包好的项目目录作为Koa静态文件服务的目录
 app.use(staticServer(path.resolve('dist')));
 
@@ -119,15 +123,13 @@ app.use(staticServer(path.resolve('dist')));
 // }));
 
 
-
-
 /**
  * 挂载用户路由
  */
 const apiRoutes = require('./routes/apiRoutes')
 router.use(apiRoutes.routes(), apiRoutes.allowedMethods())
-
-
+const indexRoutes = require('./routes/index')
+router.use(indexRoutes.routes(), indexRoutes.allowedMethods())
 
 
 // logger

@@ -17,6 +17,11 @@ module.exports = function (sequelize, DataTypes) {
                 field: 'tel',
                 type: DataTypes.INTEGER,
                 allowNull: false,
+            },
+            logo: {
+                field: 'logo',
+                type: DataTypes.INTEGER,
+                allowNull: false,
             }
         },
         {
