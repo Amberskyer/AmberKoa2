@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<form action="/api/v1/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file"/>
+    <input type="submit" value="ok"/>
+</form>
+
+<form action="/api/v1/register" method="POST" enctype="x-www-form-urlencoded">
+    <input type="text" name="username"/>
+    <input type="password" name="password"/>
+    <input type="submit" value="确定"/>
+</form>
+
+{{ title }}
+<img src="{{ userInfo.user_info.logo }}"/>
+
+
+{% for item in userInfo.folders %}
+    <p>{{ item.name }}</p>
+    <img src="{{ item.logo }}" style="width: 300px;height: 300px"/>
+{% endfor %}
+
+</body>
+<script>
+
+
+</script>
+</html>

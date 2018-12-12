@@ -3,7 +3,11 @@ const userSchema = require('../schema/user'); // 引入user的表结构
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
 const serverConfig = require('../config/server')
-const { request, summary, query, path, body, tags } = require('koa-swagger-decorator')
+const {request, summary, query, path, body, tags} = require('koa-swagger-decorator')
+
+
+const ApiError = require('../error/ApiError');
+const ApiErrorNames = require('../error/ApiErrorNames');
 
 
 class userController {
@@ -16,12 +20,8 @@ class userController {
      */
     static async postUserAuth(ctx) {
         const data = ctx.request.body; // post过来的数据存在request.body里
-
-        console.log("data", data)
-
         const userInfo = await
             userModel.findUserByName(data.username); // 数据库返回的数据
-
         if (!userInfo) {
             console.log("不存在啊啊啊啊啊啊")
             ctx.body = {
@@ -53,6 +53,53 @@ class userController {
                 token
             }
         }
+    }
+
+
+    /**
+     * 登录
+     * @param ctx
+     * @returns {Promise.<void>}
+     */
+    static async postUserAuthForForm(ctx) {
+        const data = ctx.request.body; // post过来的数据存在request.body里
+        const userInfo = await
+            userModel.findUserByName(data.username); // 数据库返回的数据
+        if (!userInfo) {
+            console.log("不存在啊啊啊啊啊啊")
+            ctx.body = {
+                success: false,
+                retDsc: '用户不存在',
+                ret: null
+            };
+            return
+        }
+        if (!bcrypt.compareSync(data.password, userInfo.password)) {
+            ctx.body = {
+                success: false,
+                retDsc: '密码错误',
+                ret: null
+            };
+            return
+        }
+        const userToken = {
+            // iss: serverConfig.userToken.iss,
+            name: userInfo.username,
+            id: userInfo.id,
+        };
+        const secret = serverConfig.jwtSecret; // 指定密钥，这是之后用来判断token合法性的标志
+        const token = jwt.sign(userToken, secret); // 签发token
+        ctx.header.authorization = "Bearer " + token
+        ctx.body = {
+            success: true,
+            retDsc: '登陆成功',
+            bean: {
+                token
+            }
+        }
+
+        await ctx.response.redirect('/');
+
     }
 
 
@@ -101,11 +148,7 @@ class userController {
                 ret: user
             }
         } else {
-            ctx.body = {
-                success: false,
-                retDsc: '查询失败',
-                ret: null
-            };
+            throw new ApiError(ApiErrorNames.USER_NOT_EXIST);
         }
     }
 

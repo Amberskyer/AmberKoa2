@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button onclick="sendmsg()"> 发送信号1</button>
+
+{{hello}}
+
+
+{{@htmldemo}}
+
+{{title}}
+<%= title %>
+
+
+
+
+{{each userInfo.folders}}
+<p>{{$index}}</p>
+<p>{{$value.name}}</p>
+<img src="{{$value.logo}}" style="width: 300px;height: 300px"/>
+{{/each}}
+
+<img src="{{userInfo.user_info.logo}}"/>
+</body>
+
+
+<!--<script src="./javascripts/socket.io.js"></script>-->
+<script src="https://cdn.socket.io/socket.io-1.2.1.js";></script>
+<script>
+    // 建立连接
+    var socket= io('ws://127.0.0.1:1024')
+    // on表示接收
+    // emit表示发送
+    socket.on('connect', function () {
+        console.log('连接上了')
+        // 登录，同步前后端信息
+        // 请求后端login接口，写入socketid
+        socket.on('news', function (data) {
+            console.log("news里面的",data);
+        });
+    })
+
+    //监听用户登录
+    socket.on('login', (userId) => {
+        //保存用户的id和socketid
+        socketHander.saveUserSocketId(userId, socketId)
+    })
+
+    function sendmsg() {
+        socket.emit('update new news', { my: '没有新新闻啊啊啊啊' });
+    }
+
+
+</script>
+
+</html>

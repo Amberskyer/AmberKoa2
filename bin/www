@@ -21,11 +21,33 @@ var port = normalizePort(process.env.PORT || '1024');
 
 var server = http.createServer(app.callback());
 
+
+const IO = require('koa-socket')
+const io = new IO()
+
+
+let socketIdList = []
+io.attach(app)
+app._io.on('connection', socket => {
+    const socketId = socket.id
+    console.log("socketId",socketId)
+    socketIdList.push(socketId)
+    socket.on('ask for new news', function (data) {
+        app._io.to(socketIdList[0]).emit('news', data);
+        app._io.to(socketIdList[1]).emit('news', data);
+    });
+    socket.on('update new news', function (data) {
+        socket.emit('news', data);
+    });
+    console.log("链接了啊啊啊啊啊啊")
+})
+
+
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+app.server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 

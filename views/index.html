@@ -5,7 +5,19 @@
     <title>Title</title>
 </head>
 <body>
+
+<button onclick="sendmsg()"> 发送信号1</button>
+
+{{hello}}
+
+
+{{@htmldemo}}
+
 {{title}}
+<%= title %>
+
+
+
 
 {{each userInfo.folders}}
 <p>{{$index}}</p>
@@ -15,4 +27,72 @@
 
 <img src="{{userInfo.user_info.logo}}"/>
 </body>
+
+
+<!--<script src="./javascripts/socket.io.js"></script>-->
+<script src="https://cdn.socket.io/socket.io-1.2.1.js";></script>
+<script>
+    // 建立连接
+    var socket= io('ws://127.0.0.1:1024')
+    // on表示接收
+    // emit表示发送
+    socket.on('connect', function () {
+        console.log('连接上了')
+        // 登录，同步前后端信息
+        // 请求后端login接口，写入socketid
+        socket.on('news', function (data) {
+            console.log("index里面的",data);
+        });
+    })
+
+    function sendmsg() {
+        socket.emit('ask for new news', { my: '有没有新新闻啊啊啊啊啊啊啊' });
+    }
+
+
+    // // 发送消息，这里可以用发送事件进行消息发送
+    // socket.emit('sendMsg', {
+    //     newAccount: 'xxxxxx'
+    // })
+    //
+    // // 接收消息
+    // socket.on('msg1', function (data) {
+    //     // 可以对数据进行渲染
+    //     console.log(data)
+    //
+    // })
+    // socket.on('allmessage', function (data) {
+    //     // 接收所有人消息
+    //     console.log(data);
+    //
+    // })
+    //
+    // // 表示连接断开了
+    // socket.on('disconnect', function () {
+    //     console.log('聊天服务器断开了')
+    // })
+</script>
+
+<!--<script>-->
+    <!--// var data ='<%=title%>'-->
+    <!--// console.log( data )-->
+    <!--// var data3 = `{{@userInfo.folders}}`-->
+    <!--// console.log( data3 )-->
+    <!--// console.log( JSON.parse(decodeURIComponent(data3)) )-->
+    <!--// let flag = check()-->
+    <!--// console.log(flag)-->
+    <!--//-->
+    <!--// function check() {-->
+    <!--//     var userAgentInfo = navigator.userAgent;-->
+    <!--//     var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");-->
+    <!--//     var flag = true;-->
+    <!--//     for (var v = 0; v < Agents.length; v++) {-->
+    <!--//         if (userAgentInfo.indexOf(Agents[v]) > 0) {-->
+    <!--//             flag = false;-->
+    <!--//             break;-->
+    <!--//         }-->
+    <!--//     }-->
+    <!--//     return flag;-->
+    <!--// }-->
+<!--</script>-->
 </html>

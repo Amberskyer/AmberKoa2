@@ -16,7 +16,7 @@ module.exports = function (sequelize, DataTypes) {
             userinfoid: {
                 field: 'user_info_id',
                 type: DataTypes.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             password: {
                 field: 'password',
@@ -26,17 +26,17 @@ module.exports = function (sequelize, DataTypes) {
             status: {
                 field: 'status',
                 type: DataTypes.INTEGER,
-                allowNull: false,
+                allowNull: true,
             },
             createTime: {
                 field: 'create_time',
                 type: DataTypes.DATE,
-                allowNull: false,
+                allowNull: true,
             },
             updateTime: {
                 field: 'update_time',
                 type: DataTypes.DATE,
-                allowNull: false,
+                allowNull: true,
             }
         },
         {

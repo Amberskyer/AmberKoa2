@@ -7,5 +7,40 @@
 <body>
 <h1><%= title %></h1>
 <p>Welcome to Koa2啊啊啊啊</p>
+
+<% for(var index in userInfo.folders){ %>
+<p><%= userInfo.folders[index].name %></p>
+<p><%= index %></p>
+<img src="<%= userInfo.folders[index].logo %>" style="width: 300px;height: 300px"/>
+<% } %>
+
+<script>
+    var data =`<%= title %>`
+    var data2 = `<%- JSON.stringify(userInfo.folders) %>`
+    var data3= `<%- userInfo.folders %>`
+    console.log( data )
+    console.log( data2 )
+    console.log( data3 )
+    // var data2 = `{{JSON.stringify(userInfo.folders)}}`
+    // console.log( encodeUrlComponent(JSON.stringify(data2) ))
+    // console.log( data2[0])
+    // console.log( JSON.stringify(data2))
+    // console.log( JSON.parse(data2))
+    let flag = check()
+    console.log(flag)
+
+    function check() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+</script>
 </body>
 </html>

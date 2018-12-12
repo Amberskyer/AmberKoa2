@@ -1,12 +1,25 @@
 const Koa = require('koa')
 const app = new Koa()
-const path=require('path');
+const path = require('path');
 
 /**
  * favicon图标
  */
 const favicon = require('koa-favicon');
 app.use(favicon(__dirname + '/public/favicon.ico'));
+
+
+/**
+ * 设置nunjucks模板语言
+ */
+const koaNunjucks = require('koa-nunjucks-2');
+app.use(koaNunjucks({
+    ext: 'njk',
+    path: path.join(__dirname, './views'),
+    nunjucksConfig: {
+        trimBlocks: true
+    }
+}));
 
 
 /**
@@ -29,35 +42,72 @@ app.use(require('koa-static')(__dirname + '/public'))
 //  */
 // const views = require('koa-views')
 // app.use(views(__dirname + '/views', {
-//     extension: 'swig'
+//     extension: 'ejs'
 // }))
 
+// /**
+//  * 配置 koa-art-template模板引擎
+//  */
+// const render = require('koa-art-template');
+// render(app, {
+//     root: path.join(__dirname, 'views'),   // 视图的位置
+//     extname: '.html',  // 后缀名
+//     debug: process.env.NODE_ENV !== 'production'  //是否开启调试模式
+// });
+
+
 /**
- * 配置 koa-art-template模板引擎
+ * 错误日志处理
  */
-const render = require('koa-art-template');
-render(app, {
-    root: path.join(__dirname, 'views'),   // 视图的位置
-    extname: '.html',  // 后缀名
-    debug: process.env.NODE_ENV !== 'production'  //是否开启调试模式
+//log工具
+const logUtil = require('./utils/logUtil');
+// logger
+app.use(async (ctx, next) => {
+    //响应开始时间
+    const start = new Date();
+    //响应间隔时间
+    var ms;
+    try {
+        //开始进入到下一个中间件
+        await next();
+
+        ms = new Date() - start;
+        //记录响应日志
+        logUtil.logResponse(ctx, ms);
+
+    } catch (error) {
+
+        ms = new Date() - start;
+        //记录异常日志
+        logUtil.logError(ctx, error, ms);
+    }
+
 });
 
 
 /**
  * 自定义中间件
  */
-const abToken = require('./middleware/ab-token')
+const abToken = require('./middlewares/ab-token')
 app.use(abToken())
 
 
-/**o
+/**
  * 用来实现JSON-WEB-TOKEN的中间件，具体的后面关于登录的章节进行展开
  */
 const jwt = require('koa-jwt');
 const serverConfig = require('./config/server');
-// app.use(jwt({secret: serverConfig.jwtSecret}).unless({
-//     path: [/^\/api\/v1\/register/,/^\/api\/v1\/login/] //数组中的路径不需要通过jwt验证
-// }))
+app.use(jwt({secret: serverConfig.jwtSecret}).unless({
+    path: [/^\/api\/v1\/register/, /^\/api\/v1\/login/, /^\/login/, /^\//] //数组中的路径不需要通过jwt验证
+}))
+
+
+// /**
+//  * 用来初始化api数据的中间件,有数据以及无数据的处理
+//  */
+// const response_formatter = require('./middlewares/response_formatter');
+// //添加格式化处理响应结果的中间件，在添加路由之前调用
+// app.use(response_formatter('^/api'));
 
 
 /**
@@ -145,5 +195,27 @@ app.on('error', (err, ctx) => {
     console.error('server error', err, ctx)
 });
 
+
+// const IO = require('koa-socket')
+// const io = new IO()
+//
+//
+// let socketIdList = []
+// io.attach(app)
+// app._io.on('connection', socket => {
+//     const socketId = socket.id
+//     console.log("socketId",socketId)
+//     socketIdList.push(socketId)
+//     socket.on('ask for new news', function (data) {
+//         app._io.to(socketIdList[0]).emit('news', data);
+//         app._io.to(socketIdList[1]).emit('news', data);
+//     });
+//     socket.on('update new news', function (data) {
+//         socket.emit('news', data);
+//     });
+//     console.log("链接了啊啊啊啊啊啊")
+// })
+//
+// app.listen(process.env.PORT || 1024)
 
 module.exports = app
