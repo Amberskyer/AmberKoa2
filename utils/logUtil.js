@@ -23,7 +23,7 @@ logUtil.logError = function (ctx, error, resTime) {
 //封装响应日志
 logUtil.logResponse = function (ctx, resTime) {
     if (ctx) {
-        console.log(chalk.greenBright(formatRes(ctx, resTime)))
+        console.log(chalk.blueBright(formatRes(ctx, resTime)))
         resLogger.info(formatRes(ctx, resTime));
     }
 };

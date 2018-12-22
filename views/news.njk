@@ -8,20 +8,21 @@
 
 
 <div class="width-100 box-wrap">
-    <button class="box" onclick="sendmsg(1)"> 查看项目1</button>
-    <button class="box" onclick="sendmsg(2)"> 查看项目2</button>
-    <button class="box" onclick="sendmsg(3)"> 查看项目3</button>
-</div><div class="width-100 box-wrap">
-    <button class="box" onclick="sendmsg(4)"> 查看项目4</button>
-    <button class="box" onclick="sendmsg(5)"> 查看项目5</button>
-    <button class="box" onclick="sendmsg(6)"> 查看项目6</button>
+    <div id="newsItem1" class="box"> 表格1</div>
+    <div id="newsItem2" class="box"> 表格2</div>
+    <div id="newsItem3" class="box"> 表格3</div>
 </div>
+<div class="width-100 box-wrap">
+    <div id="newsItem4" class="box"> 表格4</div>
+    <div id="newsItem5" class="box"> 表格5</div>
+    <div id="newsItem6" class="box"> 表格6</div>
+</div>
+
 
 </body>
 
 <script src="https://cdn.socket.io/socket.io-1.2.1.js" ;></script>
 <script>
-
     // 建立连接
     var socket = io('ws://127.0.0.1:1024')
     // on表示接收
@@ -30,20 +31,16 @@
         console.log('连接上了')
         // 登录，同步前后端信息
         // 请求后端login接口，写入socketid
+        socket.on('news', function (data) {
+            document.getElementById("newsItem" + data.newsId).innerText = "数据   :" + Math.random()
+            let r = Math.floor(Math.random()*255)
+            let g = Math.floor(Math.random()*255)
+            let b = Math.floor(Math.random()*255)
+            console.log( `rbg(${r},${g},${b})`)
+            document.getElementById("newsItem" + data.newsId).style.backgroundColor = `rbga(${r},${g},${b},1)`
+        });
     })
 
-
-    // document.getElementById("newsItem" + data.newsId).innerText = "数据   :" + Math.random()
-    // let r = Math.floor(Math.random()*255)
-    // let g = Math.floor(Math.random()*255)
-    // let b = Math.floor(Math.random()*255)
-    // console.log( `rbg(${r},${g},${b})`)
-    // var colorstr = 'rbga('+r+','+g+','+b+',1)'
-    // document.getElementById("newsItem" + data.newsId).style.backgroundColor = `rgba(${r},${g},${b},1)`
-
-    function sendmsg(newsId) {
-        socket.emit('ask for new news', {newsId: newsId});
-    }
 
 </script>
 
@@ -75,7 +72,7 @@
         font-size: 18px;
 
         text-align: center;
-        align-content: center;
+        align-items: center;
     }
 
 </style>

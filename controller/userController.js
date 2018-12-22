@@ -62,6 +62,11 @@ class userController {
      * @returns {Promise.<void>}
      */
     static async postUserAuthForForm(ctx) {
+
+
+        //获取session
+        console.log("登录状态时  :", ctx.session.userinfo);
+
         const data = ctx.request.body; // post过来的数据存在request.body里
         const userInfo = await
             userModel.findUserByName(data.username); // 数据库返回的数据
@@ -89,16 +94,17 @@ class userController {
         };
         const secret = serverConfig.jwtSecret; // 指定密钥，这是之后用来判断token合法性的标志
         const token = jwt.sign(userToken, secret); // 签发token
+
+        ctx.session.userinfo = userInfo;
+
         ctx.header.authorization = "Bearer " + token
-        ctx.body = {
+        await ctx.render('index', {
             success: true,
             retDsc: '登陆成功',
             bean: {
                 token
             }
-        }
-
-        await ctx.response.redirect('/');
+        })
 
     }
 
@@ -142,6 +148,7 @@ class userController {
         const user = await
             userModel.findUserById(id);
         if (user) {
+            ctx.response.status = 200
             ctx.body = {
                 success: true,
                 retDsc: '查询成功',
@@ -162,10 +169,7 @@ class userController {
         if (user.password && user.username) {
             const existUser = await userModel.findUserByName(user.username)
             if (existUser) {
-                ctx.body = {
-                    code: -1,
-                    message: '用户名已经存在'
-                }
+                throw new ApiError(ApiErrorNames.USER_NAME_EXIST);
             } else {
                 // 密码加密
                 const salt = bcrypt.genSaltSync()
@@ -192,10 +196,7 @@ class userController {
                 }
             }
         } else {
-            ctx.body = {
-                code: -1,
-                message: '参数错误'
-            }
+            throw new ApiError(ApiErrorNames.PARAMS_WRONG);
         }
     }
 

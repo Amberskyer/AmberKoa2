@@ -5,6 +5,8 @@ const ApiErrorNames = {};
 
 ApiErrorNames.UNKNOW_ERROR = "unknowError";
 ApiErrorNames.USER_NOT_EXIST = "userNotExist";
+ApiErrorNames.USER_NAME_EXIST = "userNameExist";
+ApiErrorNames.PARAMS_WRONG = "paramsWrong";
 
 /**
  * API错误名称对应的错误信息
@@ -13,6 +15,8 @@ const error_map = new Map();
 
 error_map.set(ApiErrorNames.UNKNOW_ERROR, {code: -1, message: '未知错误'});
 error_map.set(ApiErrorNames.USER_NOT_EXIST, {code: 101, message: '用户不存在'});
+error_map.set(ApiErrorNames.USER_NAME_EXIST, {code: -1, message: '用户名已经存在'});
+error_map.set(ApiErrorNames.PARAMS_WRONG, {code: -1, message: '参数错误'});
 
 //根据错误名称获取错误信息
 ApiErrorNames.getErrorInfo = (error_name) => {

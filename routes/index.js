@@ -2,8 +2,8 @@ const router = require('koa-router')()
 const superagent = require('superagent');
 
 router.get('/', async (ctx, next) => {
-    console.log("主页的",ctx.body)
-    console.log("主页的",ctx.header.authorization )
+    //获取session
+    console.log("登录状态时  :", ctx.session.userinfo);
     let userInfo = await superagent.get('http://127.0.0.1:1024/api/v1/user/1')
         .set('Content-Type', 'application/json;charset=UTF-8')
     await ctx.render('index', {
@@ -15,7 +15,6 @@ router.get('/', async (ctx, next) => {
 
 
 router.get('/login', async (ctx, next) => {
-    console.log("登录页面的",ctx.body)
     await ctx.render('login', {
         title: '登录页面'
     })

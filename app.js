@@ -56,6 +56,21 @@ app.use(require('koa-static')(__dirname + '/public'))
 // });
 
 
+const session = require('koa-session');
+app.keys = ['sakura'];
+const CONFIG = {
+    key: 'koa:sess',
+    maxAge: 86400000,
+    overwrite: true,
+    httpOnly: true,
+    signed: true,
+    rolling: false,
+    renew: false,
+};
+app.use(session(CONFIG, app));
+
+
+
 /**
  * 错误日志处理
  */
@@ -95,11 +110,11 @@ app.use(abToken())
 /**
  * 用来实现JSON-WEB-TOKEN的中间件，具体的后面关于登录的章节进行展开
  */
-const jwt = require('koa-jwt');
-const serverConfig = require('./config/server');
-app.use(jwt({secret: serverConfig.jwtSecret}).unless({
-    path: [/^\/api\/v1\/register/, /^\/api\/v1\/login/, /^\/login/, /^\//] //数组中的路径不需要通过jwt验证
-}))
+// const jwt = require('koa-jwt');
+// const serverConfig = require('./config/server');
+// app.use(jwt({secret: serverConfig.jwtSecret}).unless({
+//     path: [/^\/api\/v1\/register/, /^\/api\/v1\/login/, /^\/login/, /^\//] //数组中的路径不需要通过jwt验证
+// }))
 
 
 // /**
