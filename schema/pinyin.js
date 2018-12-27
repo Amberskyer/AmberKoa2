@@ -1,6 +1,6 @@
 'use strict'
 module.exports = function (sequelize, DataTypes) {
-    var PinYin = sequelize.define('pinyin', {
+    return sequelize.define('pinyin', {
             id: {
                 field: 'id',
                 type: DataTypes.INTEGER,
@@ -30,5 +30,4 @@ module.exports = function (sequelize, DataTypes) {
             timestamps: false,
             freezeTableName: true
         });
-    return PinYin
 };

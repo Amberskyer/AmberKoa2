@@ -1,6 +1,6 @@
 'use strict'
 module.exports = function (sequelize, DataTypes) {
-    var School = sequelize.define('school', {
+    return sequelize.define('school', {
             id: {
                 field: 'id',
                 type: DataTypes.INTEGER,
@@ -49,5 +49,4 @@ module.exports = function (sequelize, DataTypes) {
             timestamps: false,
             freezeTableName: true
         });
-    return School
 };

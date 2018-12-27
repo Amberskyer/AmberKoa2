@@ -1,6 +1,6 @@
 'use strict'
 module.exports = function (sequelize, DataTypes) {
-    var User = sequelize.define('user', {
+    return sequelize.define('user', {
             id: {
                 field: 'id',
                 type: DataTypes.INTEGER,
@@ -42,7 +42,6 @@ module.exports = function (sequelize, DataTypes) {
         {
             tableName: 'user',
             timestamps: false,
-            freezeTableName: true
+            freezeTableName: true// 默认false修改表名为复数，true不修改表名，与数据库表名同步
         });
-    return User
 };

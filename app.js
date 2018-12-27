@@ -81,7 +81,7 @@ app.use(async (ctx, next) => {
     //响应开始时间
     const start = new Date();
     //响应间隔时间
-    var ms;
+    let ms;
     try {
         //开始进入到下一个中间件
         await next();
@@ -195,6 +195,8 @@ const apiRoutes = require('./routes/apiRoutes')
 router.use(apiRoutes.routes(), apiRoutes.allowedMethods())
 const indexRoutes = require('./routes/index')
 router.use(indexRoutes.routes(), indexRoutes.allowedMethods())
+const javaScriptMasterRoutes = require('./routes/javaScriptMaster')
+router.use(javaScriptMasterRoutes.routes(), javaScriptMasterRoutes.allowedMethods())
 
 
 // logger

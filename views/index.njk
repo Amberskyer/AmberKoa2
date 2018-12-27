@@ -11,7 +11,8 @@
     <button class="box" onclick="sendmsg(1)"> 查看项目1</button>
     <button class="box" onclick="sendmsg(2)"> 查看项目2</button>
     <button class="box" onclick="sendmsg(3)"> 查看项目3</button>
-</div><div class="width-100 box-wrap">
+</div>
+<div class="width-100 box-wrap">
     <button class="box" onclick="sendmsg(4)"> 查看项目4</button>
     <button class="box" onclick="sendmsg(5)"> 查看项目5</button>
     <button class="box" onclick="sendmsg(6)"> 查看项目6</button>
@@ -31,6 +32,41 @@
         // 登录，同步前后端信息
         // 请求后端login接口，写入socketid
     })
+
+    function Point(x, y) {
+        this.x = x
+        this.y = y
+        this.r = function () {
+            return Math.sqrt(
+                this.x * this.x + this.y * this.y
+            )
+        }
+    }
+
+    let p = new Point(1, 1)
+    Point.prototype.r2 = function () {
+        return Math.sqrt(
+            this.x*this.x+ this.y*this.y
+        )
+    }
+    console.log("p.r()",p.r())
+    console.log("p.r2()",p.r2())
+
+
+    let points = [
+        {x: 0, y: 0},
+        {x: 1, y: 1}
+    ]
+
+    points.dist = function () {
+        let p1 = this[0]
+        let p2 = this[1]
+        let a = p2.x - p1.x
+        let b = p2.y - p1.y
+        return Math.sqrt(a * a + b * b)
+    }
+
+    console.log(points.dist())
 
 
     // document.getElementById("newsItem" + data.newsId).innerText = "数据   :" + Math.random()

@@ -2,7 +2,7 @@ const router = require('koa-router')()
 const superagent = require('superagent');
 
 router.get('/', async (ctx, next) => {
-    //获取session
+    // 获取session
     console.log("登录状态时  :", ctx.session.userinfo);
     let userInfo = await superagent.get('http://127.0.0.1:1024/api/v1/user/1')
         .set('Content-Type', 'application/json;charset=UTF-8')
@@ -59,5 +59,12 @@ router.get('/json', async (ctx, next) => {
         title: 'koa2 json'
     }
 })
+
+router.get('/pieList', async (ctx, next) => {
+    await ctx.render('pieList', {
+        title: 'Hello Koa 2!'
+    })
+})
+
 
 module.exports = router

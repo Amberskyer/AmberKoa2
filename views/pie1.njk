@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="main" style="width: 400px;height: 300px"></div>
+
+</body>
+<script src="./javascripts/jquery.min.js"></script>
+<script src="./javascripts/echarts.min.js"></script>
+<script src="./javascripts/echarts-gl.min.js"></script>
+<script>
+    var chart = echarts.init(document.getElementById('main'));
+    chart.setOption({
+        grid3D: {},
+        xAxis3D: {},
+        yAxis3D: {},
+        zAxis3D: {},
+        series: [{
+            type: 'scatter3D',
+            symbolSize: 50,
+            data: [[-1, -1, -1], [0, 0, 0], [1, 1, 1]],
+            itemStyle: {
+                opacity: 1
+            }
+        }]
+    })
+
+</script>
+
+<style>
+
+    .width-100 {
+        width: 100%;
+    }
+
+    .box-wrap {
+        margin: 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+    }
+
+    .box-wrap .box {
+        flex: 1;
+        margin: 10px;
+        background: #00B7FF;
+        color: white;
+        width: 50%;
+        min-height: 200px;
+        min-width: 300px;
+        font-weight: bold;
+        font-size: 18px;
+
+        text-align: center;
+        align-content: center;
+    }
+
+</style>
+</html>

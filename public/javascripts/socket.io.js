@@ -890,7 +890,7 @@ var io = ('undefined' === typeof module ? {} : module.exports);
 
   JSON.parse = function (text, reviver) {
   // The parse method takes a text and an optional reviver function, and returns
-  // a JavaScript value if the text is a valid JSON text.
+  // a JavaScriptMaster value if the text is a valid JSON text.
 
       var j;
 
@@ -917,7 +917,7 @@ var io = ('undefined' === typeof module ? {} : module.exports);
 
 
   // Parsing happens in four stages. In the first stage, we replace certain
-  // Unicode characters with escape sequences. JavaScript handles many characters
+  // Unicode characters with escape sequences. JavaScriptMaster handles many characters
   // incorrectly, either silently deleting them, or treating them as line endings.
 
       text = String(text);
@@ -948,8 +948,8 @@ var io = ('undefined' === typeof module ? {} : module.exports);
                   .replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
 
   // In the third stage we use the eval function to compile the text into a
-  // JavaScript structure. The '{' operator is subject to a syntactic ambiguity
-  // in JavaScript: it can begin a block or an object literal. We wrap the text
+  // JavaScriptMaster structure. The '{' operator is subject to a syntactic ambiguity
+  // in JavaScriptMaster: it can begin a block or an object literal. We wrap the text
   // in parens to eliminate the ambiguity.
 
           j = eval('(' + text + ')');

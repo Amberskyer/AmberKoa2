@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="main" style="width: 400px;height: 300px"></div>
+
+</body>
+<script src="./javascripts/jquery.min.js"></script>
+<script src="./javascripts/echarts.min.js"></script>
+<script src="./javascripts/echarts-gl.min.js"></script>
+<script>
+    var mapChart = echarts.init(document.getElementById('main'));
+
+    let option = {
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+        },
+        series: [
+            {
+                name: '访问来源',
+                type: 'pie',
+                hoverAnimation: false,
+                selectedMode: 'single',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data: [
+                    {value: 335, name: '直接访问',itemStyle:{normal:{color:'#ff5747'},emphasis:{color:'#ff3249'}}},
+                    {value: 310, name: '邮件营销',itemStyle:{normal:{color:'#4dbfff'},emphasis:{color:'#ff3249'}}},
+                    {value: 234, name: '联盟广告',itemStyle:{normal:{color:'#98fe3b'},emphasis:{color:'#ff3249'}}},
+                    {value: 135, name: '视频广告',itemStyle:{normal:{color:'#015ae5'},emphasis:{color:'#ff3249'}}},
+                    {value: 1548, name: '搜索引擎',itemStyle:{normal:{color:'#9f9f9f'},emphasis:{color:'#ff3249'}}}
+                ]
+            }
+        ]
+    };
+    mapChart.setOption(option)
+
+
+
+    mapChart.on("mouseover", function (params){
+        console.log(params)
+        mapChart.dispatchAction({
+            type: 'downplay',
+            seriesIndex: 0,
+            dataIndex: params.currentIndex
+        });
+    });
+    mapChart.on("click", function (params){
+        console.log(params)
+        mapChart.dispatchAction({
+            type: 'highlight',
+            seriesIndex: params.seriesIndex,
+            dataIndex: params.dataIndex
+        });
+    });
+
+</script>
+
+<style>
+
+    .width-100 {
+        width: 100%;
+    }
+
+    .box-wrap {
+        margin: 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+    }
+
+    .box-wrap .box {
+        flex: 1;
+        margin: 10px;
+        background: #00B7FF;
+        color: white;
+        width: 50%;
+        min-height: 200px;
+        min-width: 300px;
+        font-weight: bold;
+        font-size: 18px;
+
+        text-align: center;
+        align-content: center;
+    }
+
+</style>
+</html>
