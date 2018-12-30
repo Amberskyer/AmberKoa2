@@ -1,28 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4534aec-1392-48c5-81d7-37e0abeee49c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/pipe/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/javascripts/echarts-gl.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/javascripts/echarts.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/javascripts/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/javaScriptMaster.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/JavaScriptMaster/index.njk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pie1.njk" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/pieList.njk" afterDir="false" />
+    <list default="true" id="a4534aec-1392-48c5-81d7-37e0abeee49c" name="Default" comment="20181227 阴天">
+      <change afterPath="$PROJECT_DIR$/pipe/ES6入门指南/03/01.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pipe/ES6入门指南/03/02.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pipe/ES6入门指南/03/03.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pipe/ES6入门指南/03/04.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pipe/ES6入门指南/03/05.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pipe/ES6入门指南/03/06.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/socket.io.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/javascripts/socket.io.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/schema/file.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema/folder.js" beforeDir="false" afterPath="$PROJECT_DIR$/schema/folder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema/pinyin.js" beforeDir="false" afterPath="$PROJECT_DIR$/schema/pinyin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema/school.js" beforeDir="false" afterPath="$PROJECT_DIR$/schema/school.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/schema/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema/userInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/schema/userInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.njk" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.njk" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,15 +22,68 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pieList.njk" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/pieList.njk">
+      <file leaf-file-name="02.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pipe/ES6入门指南/03/02.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="61" selection-end-column="7" />
+            <state relative-caret-position="400">
+              <caret line="110" column="51" selection-start-line="110" selection-start-column="51" selection-end-line="110" selection-end-column="51" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#1477#1584#0#HTML" />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="03.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pipe/ES6入门指南/03/03.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="04.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pipe/ES6入门指南/03/04.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="05.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pipe/ES6入门指南/03/05.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="06.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pipe/ES6入门指南/03/06.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="25">
+              <caret line="1" column="15" lean-forward="true" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="01.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pipe/ES6入门指南/03/01.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="71" column="34" lean-forward="true" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -62,14 +101,13 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>中学</find>
       <find>人数</find>
       <find>item2</find>
       <find>初中部</find>
       <find>省级及以上骨干教师</find>
       <find>学校有</find>
       <find>str</find>
-      <find />
+      <find>Array.from({length: (headerArr.length + 1)}, () =&gt; &quot;&quot;)</find>
       <find>cellArr</find>
       <find>logUtil</find>
       <find>ApiErrorNames</find>
@@ -91,7 +129,8 @@
       <find>koa-multer</find>
       <find>var</find>
       <find>index</find>
-      <find />
+      <find>Approximate Payments</find>
+      <find>map</find>
     </findStrings>
     <replaceStrings>
       <replace>File</replace>
@@ -106,17 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pipe/tumblr.js" />
-        <option value="$PROJECT_DIR$/views/index.nunjucks.html" />
-        <option value="$PROJECT_DIR$/views/index.ejs" />
-        <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/views/index.html" />
-        <option value="$PROJECT_DIR$/config/response_formatter.js" />
-        <option value="$PROJECT_DIR$/error/ApiError.js" />
-        <option value="$PROJECT_DIR$/middlewares/response_formatter.js" />
-        <option value="$PROJECT_DIR$/logs/error/error-2018-12-11-14.log" />
-        <option value="$PROJECT_DIR$/controller/fileController.js" />
-        <option value="$PROJECT_DIR$/routes/v1/files.js" />
         <option value="$PROJECT_DIR$/routes/v1/user.js" />
         <option value="$PROJECT_DIR$/views/login.njk" />
         <option value="$PROJECT_DIR$/routes/v1/auth.js" />
@@ -157,6 +185,17 @@
         <option value="$PROJECT_DIR$/pipe/test.js" />
         <option value="$PROJECT_DIR$/bin/www" />
         <option value="$PROJECT_DIR$/views/pieList.njk" />
+        <option value="$PROJECT_DIR$/pipe/ES6入门指南/333.js" />
+        <option value="$PROJECT_DIR$/pipe/ES6入门指南/03.js" />
+        <option value="$PROJECT_DIR$/pipe/ES6入门指南/03/0203.js" />
+        <option value="$PROJECT_DIR$/pipe/ES6入门指南/03/07.js" />
+        <option value="$PROJECT_DIR$/pipe/ES6入门指南/03/01.js" />
+        <option value="$PROJECT_DIR$/pipe/ES6入门指南/03/02.js" />
+        <option value="$PROJECT_DIR$/pipe/ES6入门指南/03/03.js" />
+        <option value="$PROJECT_DIR$/pipe/ES6入门指南/03/0607.js" />
+        <option value="$PROJECT_DIR$/pipe/ES6入门指南/03/04.js" />
+        <option value="$PROJECT_DIR$/pipe/ES6入门指南/03/06.js" />
+        <option value="$PROJECT_DIR$/pipe/ES6入门指南/03/05.js" />
       </list>
     </option>
   </component>
@@ -172,9 +211,9 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
+    <option name="x" value="19" />
+    <option name="y" value="75" />
+    <option name="width" value="1796" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -185,7 +224,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -196,12 +234,37 @@
             <path>
               <item name="AmberKoa2" type="b2602c69:ProjectViewProjectNode" />
               <item name="AmberKoa2" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="pipe" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AmberKoa2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AmberKoa2" type="462c0819:PsiDirectoryNode" />
+              <item name="pipe" type="462c0819:PsiDirectoryNode" />
+              <item name="ES6入门指南" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AmberKoa2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AmberKoa2" type="462c0819:PsiDirectoryNode" />
+              <item name="pipe" type="462c0819:PsiDirectoryNode" />
+              <item name="ES6入门指南" type="462c0819:PsiDirectoryNode" />
+              <item name="03" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AmberKoa2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AmberKoa2" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AmberKoa2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AmberKoa2" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="javascripts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -215,22 +278,22 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Ambersky_keke\Documents\GitHub\AmberKoa2\public\docs" />
-      <recent name="C:\Users\Ambersky_keke\Documents\GitHub\AmberKoa2\public" />
-      <recent name="C:\Users\Ambersky_keke\Documents\GitHub\AmberKoa2\logs\response" />
-      <recent name="C:\Users\Ambersky_keke\Documents\GitHub\AmberKoa2\middlewares" />
-      <recent name="C:\Users\Ambersky_keke\Documents\GitHub\AmberKoa2" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Ambersky_keke\Documents\GitHub\AmberKoa2\views" />
       <recent name="C:\Users\Ambersky_keke\Documents\GitHub\AmberKoa2\public\javascripts" />
       <recent name="C:\Users\Ambersky_keke\Documents\GitHub\AmberKoa2\pipe" />
       <recent name="C:\Users\Ambersky_keke\Documents\GitHub\AmberKoa2\schema" />
       <recent name="C:\Users\Ambersky_keke\Documents\GitHub\AmberKoa2\error" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ambersky_keke\Documents\GitHub\AmberKoa2\pipe\ES6入门指南\03" />
+      <recent name="C:\Users\Ambersky_keke\Documents\GitHub\AmberKoa2\public\docs" />
+      <recent name="C:\Users\Ambersky_keke\Documents\GitHub\AmberKoa2\public" />
+      <recent name="C:\Users\Ambersky_keke\Documents\GitHub\AmberKoa2\logs\response" />
+      <recent name="C:\Users\Ambersky_keke\Documents\GitHub\AmberKoa2\middlewares" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -245,7 +308,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="Node.js.05.js">
+    <configuration name="02.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/pipe/ES6入门指南/03/02.js" working-dir="$PROJECT_DIR$/pipe/ES6入门指南" />
+    <configuration name="0405.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/pipe/ES6入门指南/03/0405.js" working-dir="$PROJECT_DIR$/pipe/ES6入门指南/03" />
+    <configuration name="05.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="05.js" working-dir="$PROJECT_DIR$/pipe/ES6入门指南/03" />
+    <configuration name="0607.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/pipe/ES6入门指南/03/0607.js" working-dir="$PROJECT_DIR$/pipe/ES6入门指南/03" />
     <configuration name="dev" type="js.build_tools.npm" factoryName="npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -267,9 +334,16 @@
     <list>
       <item itemvalue="npm.dev" />
       <item itemvalue="npm.start" />
+      <item itemvalue="Node.js.0405.js" />
+      <item itemvalue="Node.js.0607.js" />
+      <item itemvalue="Node.js.05.js" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.05.js" />
+        <item itemvalue="Node.js.0607.js" />
+        <item itemvalue="Node.js.0405.js" />
+        <item itemvalue="Node.js.02.js" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -300,7 +374,8 @@
       <workItem from="1545124916341" duration="3101000" />
       <workItem from="1545180555028" duration="1622000" />
       <workItem from="1545377887028" duration="1395000" />
-      <workItem from="1545615058507" duration="36718000" />
+      <workItem from="1545615058507" duration="47887000" />
+      <workItem from="1546153259666" duration="8552000" />
     </task>
     <task id="LOCAL-00001" summary="文件表格的增删改查&#10;文件夹表格的增删改查">
       <created>1542713663437</created>
@@ -337,11 +412,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545449934206</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="20181227 阴天">
+      <created>1545882525694</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1545882525694</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243783000" />
+    <option name="totallyTimeSpent" value="263504000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -353,17 +435,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22023182" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22023182" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3293348" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.30663857" side_tool="true" visible="true" weight="0.45503792" />
-      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.49894625" weight="0.32827735" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.30769232" side_tool="true" visible="true" weight="0.45503792" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32827735" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.69336146" visible="true" weight="0.45503792" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.6923077" visible="true" weight="0.45503792" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49894625" weight="0.3672806" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -376,6 +456,7 @@
       <window_info anchor="bottom" id="Messages" order="0" weight="0.3293348" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.49894625" weight="0.32827735" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,115 +471,24 @@
     <MESSAGE value="完成文件上传" />
     <MESSAGE value="20181211-阴天-李锶雨找我连天了，开心~" />
     <MESSAGE value="20181222 小雨" />
-    <option name="LAST_COMMIT_MESSAGE" value="20181222 小雨" />
+    <MESSAGE value="20181227 阴天" />
+    <option name="LAST_COMMIT_MESSAGE" value="20181227 阴天" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="18" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/WebstormProjects/WebstormProjectsMoney/demo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-725" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/WebstormProjects/WebstormProjectsMoney/3D.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="493" column="19" selection-start-line="493" selection-start-column="19" selection-end-line="493" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Tencent Files/424144965/FileRecv/schoolData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="997" column="18" selection-start-line="997" selection-start-column="18" selection-end-line="997" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pipe/pinyin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10525">
-          <caret line="421" column="8" selection-start-line="421" selection-start-column="8" selection-end-line="423" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pipe/school.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="1260" column="35" selection-start-line="1260" selection-start-column="35" selection-end-line="1260" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.ejs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/login.njk">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="82" selection-start-line="9" selection-start-column="82" selection-end-line="9" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/echarts.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/jquery.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/echarts-gl.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/news.njk">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/log.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/user_info.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/pinyin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/folder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/models/file.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-230">
           <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/folderModel.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/schema/file.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -539,9 +529,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -575,9 +562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
           <caret line="136" column="32" selection-start-line="136" selection-start-column="32" selection-end-line="136" selection-end-column="32" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -592,28 +576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="38" column="67" selection-start-line="38" selection-start-column="67" selection-end-line="38" selection-end-column="67" />
-          <folding>
-            <element signature="e#533#1146#0" />
-            <element signature="e#1171#1272#0" />
-            <element signature="e#1287#1325#0" />
-            <element signature="e#1393#1768#0" />
-            <element signature="e#1836#2211#0" />
-            <element signature="e#2279#2654#0" />
-            <element signature="e#2722#3097#0" />
-            <element signature="e#3165#3540#0" />
-            <element signature="e#3595#3689#0" />
-            <element signature="e#3750#3791#0" />
-            <element signature="e#3846#3938#0" />
-            <element signature="e#3968#4089#0" />
-            <element signature="e#4125#4217#0" />
-            <element signature="e#4239#5068#0" />
-            <element signature="e#5096#5193#0" />
-            <element signature="e#5216#5551#0" />
-            <element signature="e#5593#5747#0" />
-            <element signature="e#5969#6060#0" />
-            <element signature="e#6073#6145#0" />
-            <element signature="e#6157#6231#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -623,9 +585,6 @@
           <caret line="6" column="46" lean-forward="true" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/v1/apiVersion1.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -638,10 +597,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -666,9 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/sendmsg.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/userController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -687,14 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3">
           <caret line="187" column="7" lean-forward="true" selection-start-line="187" selection-start-column="7" selection-end-line="187" selection-end-column="7" />
-          <folding>
-            <element signature="e#196#221#0" />
-            <element signature="e#289#404#0" />
-            <element signature="e#410#434#0" />
-            <element signature="e#488#511#0" />
-            <element signature="e#576#621#0" />
-            <element signature="e#1164#1307#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -704,17 +648,6 @@
           <caret line="182" column="10" lean-forward="true" selection-start-line="182" selection-start-column="10" selection-end-line="182" selection-end-column="10" />
           <folding>
             <element signature="n#td#0;n#tr#5;n#table#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pipe/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="50" column="23" lean-forward="true" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
-          <folding>
-            <element signature="n#Point#0" />
-            <element signature="n#Polygon#0" />
           </folding>
         </state>
       </provider>
@@ -758,9 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/fileModel.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/pie1.njk">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -771,14 +701,156 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controller/fileController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-300" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/log.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-600" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/pieList.njk">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="61" selection-end-column="7" />
+        <state relative-caret-position="222">
+          <caret line="61" column="7" lean-forward="true" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#1477#1584#0#HTML" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pipe/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="n#Point#0" />
+            <element signature="n#Polygon#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/echarts-gl.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/echarts.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2775" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/socket.io.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/pinyin.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pipe/doc.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pipe/ES6入门指南/03/0405.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="52" lean-forward="true" selection-end-line="110" selection-end-column="51" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pipe/ES6入门指南/03/02.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="110" column="51" selection-start-line="110" selection-start-column="51" selection-end-line="110" selection-end-column="51" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pipe/ES6入门指南/03/0203.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="83" lean-forward="true" selection-end-line="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pipe/ES6入门指南/03/03.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pipe/ES6入门指南/03/04.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pipe/ES6入门指南/03/0607.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="68" column="19" lean-forward="true" selection-start-line="31" selection-end-line="68" selection-end-column="19" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pipe/ES6入门指南/03/07.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" lean-forward="true" selection-end-line="5" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pipe/ES6入门指南/03/05.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pipe/ES6入门指南/03/06.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="15" lean-forward="true" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pipe/ES6入门指南/03/01.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="71" column="34" lean-forward="true" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
         </state>
       </provider>
     </entry>
