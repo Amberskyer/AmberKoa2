@@ -11,9 +11,9 @@ for (let index of ['a', 'b'].keys()) {
 // 1
 
 /*   (important:)TODO:书中代码报错   */
-for (let elem of new Set(['a', 'b']).values()) {
-    console.log(elem);
-}
+// for (let elem of ['a', 'b'].values()) {
+//     console.log(elem);
+// }
 //'a'
 //'b'
 
@@ -36,3 +36,5 @@ console.log(entries.next().value); // [0, 'a']
 console.log(entries.next().value); // [1, 'b']
 console.log(entries.next().value); // [2, 'c']
 console.log(entries.next().value); // undefined
+let entriesArr =  [...entries]
+console.log({entriesArr})//{ entriesArr: [ [ 0, 'a' ], [ 1, 'b' ], [ 2, 'c' ] ] }
