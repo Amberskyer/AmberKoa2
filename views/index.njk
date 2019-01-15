@@ -3,35 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://unpkg.com/@alifd/next/dist/next.css">
+    <script src="https://unpkg.com/@alifd/next/dist/next.js"></script>
+
 </head>
 <body>
-
-
-<div class="width-100 box-wrap">
-    <button class="box" onclick="sendmsg(1)"> 查看项目1</button>
-    <button class="box" onclick="sendmsg(2)"> 查看项目2</button>
-    <button class="box" onclick="sendmsg(3)"> 查看项目3</button>
+<div>
+    <Button type="normal">Normal</Button> &nbsp;&nbsp;
+    <Button type="primary">Prirmary</Button> &nbsp;&nbsp;
+    <Button type="secondary">Secondary</Button>
+    <br /><br />
+    <Button type="normal" text>Normal</Button> &nbsp;&nbsp;
+    <Button type="primary" text>Primary</Button> &nbsp;&nbsp;
+    <Button type="secondary" text>Secondary</Button>
+    <br /><br />
+    <Button type="normal" warning>Normal</Button> &nbsp;&nbsp;
+    <Button type="primary" warning>Primary</Button> &nbsp;&nbsp;
 </div>
-<div class="width-100 box-wrap">
-    <button class="box" onclick="sendmsg(4)"> 查看项目4</button>
-    <button class="box" onclick="sendmsg(5)"> 查看项目5</button>
-    <button class="box" onclick="sendmsg(6)"> 查看项目6</button>
+<div id="main">
+    <Button type="normal">Normal</Button> &nbsp;&nbsp;
+    <Button type="primary">Prirmary</Button> &nbsp;&nbsp;
+    <Button type="secondary">Secondary</Button>
+    <br /><br />
+    <Button type="normal" text>Normal</Button> &nbsp;&nbsp;
+    <Button type="primary" text>Primary</Button> &nbsp;&nbsp;
+    <Button type="secondary" text>Secondary</Button>
+    <br /><br />
+    <Button type="normal" warning>Normal</Button> &nbsp;&nbsp;
+    <Button type="primary" warning>Primary</Button> &nbsp;&nbsp;
 </div>
+
 
 </body>
 
-<script src="https://cdn.socket.io/socket.io-1.2.1.js" ;></script>
 <script>
 
-    // 建立连接
-    var socket = io('ws://127.0.0.1:1024')
-    // on表示接收
-    // emit表示发送
-    socket.on('connect', function () {
-        console.log('连接上了')
-        // 登录，同步前后端信息
-        // 请求后端login接口，写入socketid
-    })
+    // let mainDiv = document.querySelector("#main")
+    // console.log({mainDiv})
+    //
+    // ReactDOM.render('<div>\n' +
+    //     '    <Button type="normal">Normal</Button> &nbsp;&nbsp;\n' +
+    //     '    <Button type="primary">Prirmary</Button> &nbsp;&nbsp;\n' +
+    //     '    <Button type="secondary">Secondary</Button>\n' +
+    //     '    <br /><br />\n' +
+    //     '    <Button type="normal" text>Normal</Button> &nbsp;&nbsp;\n' +
+    //     '    <Button type="primary" text>Primary</Button> &nbsp;&nbsp;\n' +
+    //     '    <Button type="secondary" text>Secondary</Button>\n' +
+    //     '    <br /><br />\n' +
+    //     '    <Button type="normal" warning>Normal</Button> &nbsp;&nbsp;\n' +
+    //     '    <Button type="primary" warning>Primary</Button> &nbsp;&nbsp;\n' +
+    //     '</div>', mainDiv);
+
 
     function Point(x, y) {
         this.x = x
@@ -46,11 +68,11 @@
     let p = new Point(1, 1)
     Point.prototype.r2 = function () {
         return Math.sqrt(
-            this.x*this.x+ this.y*this.y
+            this.x * this.x + this.y * this.y
         )
     }
-    console.log("p.r()",p.r())
-    console.log("p.r2()",p.r2())
+    console.log("p.r()", p.r())
+    console.log("p.r2()", p.r2())
 
 
     let points = [
@@ -76,10 +98,6 @@
     // console.log( `rbg(${r},${g},${b})`)
     // var colorstr = 'rbga('+r+','+g+','+b+',1)'
     // document.getElementById("newsItem" + data.newsId).style.backgroundColor = `rgba(${r},${g},${b},1)`
-
-    function sendmsg(newsId) {
-        socket.emit('ask for new news', {newsId: newsId});
-    }
 
 </script>
 

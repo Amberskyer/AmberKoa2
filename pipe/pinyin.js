@@ -439,9 +439,9 @@ loadPinYinByHanzi("小楼一夜听春雨")
 function loadPinYinByHanzi(hzStr) {
     let pyStr = ""
     hzStr.split("").forEach(async (item,index) => {
-        let str = await  PinYin.findOne({where: {hanzi: item}}).catch(function (err) {
-            console.log("发生错误：" + err);
-        });
+            let str = await  PinYin.findOne({where: {hanzi: item}}).catch(function (err) {
+                console.log("发生错误：" + err);
+            });
         pyStr += str.dataValues.pinyin
         if(index == (hzStr.split("").length-1)){
             console.log(pyStr)

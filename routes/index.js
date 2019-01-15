@@ -9,7 +9,6 @@ router.get('/', async (ctx, next) => {
     await ctx.render('index', {
         title: 'Hello Koa 2!',
         htmldemo: '<div style="background-color: #00B7FF">5555555</div>',
-        userInfo: userInfo.body.ret
     })
 })
 
