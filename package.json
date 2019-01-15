@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@alicloud/sms-sdk": "^1.1.6",
+    "@alifd/theme-4058": "^0.1.0",
     "@tensorflow-models/posenet": "^0.2.3",
     "@tensorflow/tfjs": "^0.13.5",
     "adm-zip": "^0.4.13",
@@ -23,6 +24,7 @@
     "echarts-gl": "^1.1.1",
     "ejs": "^2.6.1",
     "html-minifier": "^3.5.21",
+    "iconv-lite": "^0.4.24",
     "kcors": "^2.2.2",
     "koa": "^2.6.2",
     "koa-art-template": "^1.1.1",
@@ -48,7 +50,9 @@
     "mysql2": "^1.6.4",
     "node-xlsx": "^0.12.1",
     "pug": "^2.0.0-rc.1",
+    "request": "^2.88.0",
     "sequelize": "^4.42.0",
+    "string_decoder": "^1.2.0",
     "superagent": "^4.0.0",
     "superagent-proxy": "^2.0.0"
   },
