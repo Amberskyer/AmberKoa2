@@ -14,6 +14,7 @@ router.get('/', async (ctx, next) => {
 })
 
 
+
 router.get('/login', async (ctx, next) => {
     await ctx.render('login', {
         title: '登录页面'
@@ -51,7 +52,17 @@ router.get('/tumblr', async (ctx, next) => {
 })
 
 router.get('/string', async (ctx, next) => {
-    ctx.body = 'koa2 string'
+    // let imageUrl = "http://orangteens.xyz/th4/030.jpg"
+    let imageUrl = "https://segmentfault.com/q/1010000008379638/a-1020000008379823"
+    let image = await superagent.get(imageUrl)
+       .set('Content-Type', 'application/json;charset=UTF-8')
+       .catch(function (err) {
+           console.log("异常" + err)
+       })
+
+    console.log(image)
+
+    ctx.body = "222"
 })
 
 router.get('/json', async (ctx, next) => {
