@@ -1,7 +1,7 @@
 /**
  * @author wuke
- * @date 2019-01-09
- * @Description: Page:5/11  Class表达式
+ * @date 2019-01-999
+ * @Description: Page:5/15  Class表达式
  */
 /*   (start:)(tips:)跟函数一样，类也可以使用表达式的形式定义   */
 const MyClass = class Me{

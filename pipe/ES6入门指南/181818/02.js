@@ -1,7 +1,7 @@
 /**
  * @author wuke
  * @date 2019-01-07
- * @Description: Page:4/11  严格模式
+ * @Description: Page:4/15  严格模式
  */
 
 /*   (tips:)类和模块的内部，默认就是严格模式，所以不需要使用 use strict 指定运行模式。只要你的代码写在类或模块之中，就只有严格模式可用   */

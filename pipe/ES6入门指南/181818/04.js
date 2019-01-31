@@ -1,7 +1,7 @@
 /**
  * @author wuke
  * @date 2019-01-07
- * @Description: Page:4/11  类的实例对象
+ * @Description: Page:4/15  类的实例对象
  */
 /*   (start:)生成类的实例对象的写法，与ES5完全一样，也是使用new命令。   */
 // class Point {

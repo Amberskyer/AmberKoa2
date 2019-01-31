@@ -1,136 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="width: 100%;height: 100%">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="https://unpkg.com/@alifd/next/dist/next.css">
-    <script src="https://unpkg.com/@alifd/next/dist/next.js"></script>
+
+    <script type="text/javascript" src="../javascripts/echarts.min.js"></script>
+    <script type="text/javascript" src="../javascripts/hammer.js"></script>
+    <script type="text/javascript" src="../javascripts/bmap.js"></script>
+    <script type="text/javascript" src="../javascripts/china.js"></script>
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/api?v=2.0&ak=MaF5RPSfVdWeNqjlmZART93qXVoPiZ2N"></script>
+
 
 </head>
-<body>
-<div>
-    <Button type="normal">Normal</Button> &nbsp;&nbsp;
-    <Button type="primary">Prirmary</Button> &nbsp;&nbsp;
-    <Button type="secondary">Secondary</Button>
-    <br /><br />
-    <Button type="normal" text>Normal</Button> &nbsp;&nbsp;
-    <Button type="primary" text>Primary</Button> &nbsp;&nbsp;
-    <Button type="secondary" text>Secondary</Button>
-    <br /><br />
-    <Button type="normal" warning>Normal</Button> &nbsp;&nbsp;
-    <Button type="primary" warning>Primary</Button> &nbsp;&nbsp;
-</div>
-<div id="main">
-    <Button type="normal">Normal</Button> &nbsp;&nbsp;
-    <Button type="primary">Prirmary</Button> &nbsp;&nbsp;
-    <Button type="secondary">Secondary</Button>
-    <br /><br />
-    <Button type="normal" text>Normal</Button> &nbsp;&nbsp;
-    <Button type="primary" text>Primary</Button> &nbsp;&nbsp;
-    <Button type="secondary" text>Secondary</Button>
-    <br /><br />
-    <Button type="normal" warning>Normal</Button> &nbsp;&nbsp;
-    <Button type="primary" warning>Primary</Button> &nbsp;&nbsp;
-</div>
-
-
-</body>
+<body style="width: 100%;height: 100%">
+<div id="main" style="width: 100%;height: 100%;float: left"></div>
 
 <script>
-
-    // let mainDiv = document.querySelector("#main")
-    // console.log({mainDiv})
-    //
-    // ReactDOM.render('<div>\n' +
-    //     '    <Button type="normal">Normal</Button> &nbsp;&nbsp;\n' +
-    //     '    <Button type="primary">Prirmary</Button> &nbsp;&nbsp;\n' +
-    //     '    <Button type="secondary">Secondary</Button>\n' +
-    //     '    <br /><br />\n' +
-    //     '    <Button type="normal" text>Normal</Button> &nbsp;&nbsp;\n' +
-    //     '    <Button type="primary" text>Primary</Button> &nbsp;&nbsp;\n' +
-    //     '    <Button type="secondary" text>Secondary</Button>\n' +
-    //     '    <br /><br />\n' +
-    //     '    <Button type="normal" warning>Normal</Button> &nbsp;&nbsp;\n' +
-    //     '    <Button type="primary" warning>Primary</Button> &nbsp;&nbsp;\n' +
-    //     '</div>', mainDiv);
-
-
-    function Point(x, y) {
-        this.x = x
-        this.y = y
-        this.r = function () {
-            return Math.sqrt(
-                this.x * this.x + this.y * this.y
-            )
-        }
-    }
-
-    let p = new Point(1, 1)
-    Point.prototype.r2 = function () {
-        return Math.sqrt(
-            this.x * this.x + this.y * this.y
-        )
-    }
-    console.log("p.r()", p.r())
-    console.log("p.r2()", p.r2())
-
-
-    let points = [
-        {x: 0, y: 0},
-        {x: 1, y: 1}
+    let dataArr = [
+        {id: "1", parent: "0", name: "福建省高级人民法院管辖区"},
+        {id: "2", parent: "1", name: "福州市中级人民法院管辖区"},
+        {id: "3", parent: "1", name: "厦门市中级人民法院管辖区"},
+        {id: "4", parent: "2", name: "莆田市中级人民法院管辖区"},
+        {id: "5", parent: "1", name: "三明市中级人民法院管辖区"},
+        {id: "7", parent: "4", name: "漳州市中级人民法院管辖区"},
+        {id: "8", parent: "1", name: "南平市中级人民法院管辖区"},
+        {id: "9", parent: "4", name: "宁德市中级人民法院管辖区"},
+        {id: "10", parent: "1", name: "龙岩市中级人民法院管辖区"},
+        {id: "73924610", parent: "5", name: "办公室"},
+        {id: "6", parent: "5", name: "办公室"},
+        {id: "7", parent: "6", name: "办公室"},
+        {id: "8", parent: "7", name: "办公室"},
+        {id: "9", parent: "8", name: "办公室"},
+        {id: "73924611", parent: "5", name: "立案庭"}
     ]
 
-    points.dist = function () {
-        let p1 = this[0]
-        let p2 = this[1]
-        let a = p2.x - p1.x
-        let b = p2.y - p1.y
-        return Math.sqrt(a * a + b * b)
+    let nDataArr = buildTree(dataArr)
+    console.log({nDataArr})
+
+    function buildTree(list) {
+        let temp = {};
+        let tree = {};
+        for (let i in list) {
+            temp[list[i].id] = list[i];
+        }
+        for (let i in temp) {
+            if (temp[i].parent&&temp[temp[i].parent]) {
+                if (!temp[temp[i].parent].children) {
+                    temp[temp[i].parent].children = new Object();
+                }
+                temp[temp[i].parent].children[temp[i].id] = temp[i];
+            } else {
+                tree[temp[i].id] = temp[i];
+            }
+        }
+        return tree;
     }
-
-    console.log(points.dist())
-
-
-    // document.getElementById("newsItem" + data.newsId).innerText = "数据   :" + Math.random()
-    // let r = Math.floor(Math.random()*255)
-    // let g = Math.floor(Math.random()*255)
-    // let b = Math.floor(Math.random()*255)
-    // console.log( `rbg(${r},${g},${b})`)
-    // var colorstr = 'rbga('+r+','+g+','+b+',1)'
-    // document.getElementById("newsItem" + data.newsId).style.backgroundColor = `rgba(${r},${g},${b},1)`
-
 </script>
 
-<style>
-
-    .width-100 {
-        width: 100%;
-    }
-
-    .box-wrap {
-        margin: 10px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: row;
-        width: 100%;
-        height: auto;
-    }
-
-    .box-wrap .box {
-        flex: 1;
-        margin: 10px;
-        background: #00B7FF;
-        color: white;
-        width: 50%;
-        min-height: 200px;
-        min-width: 300px;
-        font-weight: bold;
-        font-size: 18px;
-
-        text-align: center;
-        align-content: center;
-    }
-
-</style>
+</body>
 </html>

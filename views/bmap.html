@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript" src="../public/javascripts/echarts.min.js"></script>
+    <script type="text/javascript" src="../public/javascripts/echarts-gl.min.js"></script>
+    <script type="text/javascript" src="../public/javascripts/bmap.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=MaF5RPSfVdWeNqjlmZART93qXVoPiZ2N"></script>
+    <script type="text/javascript" src="../public/javascripts/jquery.min.js"></script>
+
+
+</head>
+<body>
+<div id="main" style="width: 100%;height: 100% ;background-color: #00B7FF "></div>
+
+<script>
+    let option = {
+        tooltip: {
+            trigger: 'item'
+        },
+        bmap: {
+            center: [120.7, 31.298886],
+            zoom: 12,
+            roam: true,
+            enableMapClick: false
+        },
+        series: []
+    };
+
+    let schoolDataList =
+        [
+        {
+            "name": "苏州工业园区工业技术学校",
+            "address": "苏州工业园区松涛街208号",
+            "value": [
+                117.288527,
+                31.847651
+            ]
+        },
+        {
+            "name": "苏州工业园区第二高级中学",
+            "address": "苏州工业园区金埂路1号",
+            "value": [
+                120.795359,
+                31.363991
+            ]
+        },
+        {
+            "name": "苏州工业园区星海实验中学",
+            "address": "苏州工业园区苏茜路18号",
+            "value": [
+                120.676142,
+                31.3145
+            ]
+        },
+        {
+            "name": "苏州工业园区第一中学",
+            "address": "苏州工业园区东振路88号",
+            "value": [
+                117.279705,
+                31.86487
+            ]
+        },
+        {
+            "name": "苏州工业园区第五中学",
+            "address": "苏州工业园区蠡塘路78号",
+            "value": [
+                117.328718,
+                31.872619
+            ]
+        },
+        {
+            "name": "苏州工业园区第六中学",
+            "address": "苏州工业园区兴浦路55号",
+            "value": [
+                117.277536,
+                31.865481
+            ]
+        },
+        {
+            "name": "苏州工业园区第十中学",
+            "address": "苏州工业园区津梁街10号",
+            "value": [
+                117.329115,
+                31.861655
+            ]
+        },
+        {
+            "name": "苏州工业园区娄葑学校",
+            "address": "苏州工业园区扬东路200号",
+            "value": [
+                120.668035,
+                31.346691
+            ]
+        },
+        {
+            "name": "苏州工业园区唯亭学校",
+            "address": "苏州工业园区畅苑环路",
+            "value": [
+                120.781192,
+                31.366761
+            ]
+        },
+        {
+            "name": "苏州工业园区斜塘学校",
+            "address": "苏州工业园区敦煌路",
+            "value": [
+                120.740783,
+                31.301267
+            ]
+        },
+        {
+            "name": "苏州工业园区新城花园小学",
+            "address": "苏州工业园区苏慕路77号",
+            "value": [
+                120.67423,
+                31.329349
+            ]
+        },
+        {
+            "name": "苏州工业园区车坊实验小学",
+            "address": "苏州工业园区车坊蔺谊南路",
+            "value": [
+                120.756935,
+                31.251604
+            ]
+        }
+    ] ;
+    let schoolDataList2 =
+        [
+            {
+                "name": "苏州大学附属中学",
+                "value": [
+                    120.669811,
+                    31.29706
+                ],
+                "address": " 苏州工业园区东振路29号"
+            },
+            {
+                "name": "西安交通大学苏州附属中学",
+                "value": [
+                    120.744238,
+                    31.319894
+                ],
+                "address": " 苏州工业园区方洲路598号"
+            },
+            {
+                "name": "苏州工业园区星港学校",
+                "value": [
+                    120.66035,
+                    31.320147
+                ],
+                "address": " 苏州工业园区飘一路9号"
+            },
+            {
+                "name": "苏州工业园区星湾学校",
+                "value": [
+                    120.707846,
+                    31.333853
+                ],
+                "address": " 苏州工业园区玲珑街8号"
+            },
+            {
+                "name": "苏州工业园区金鸡湖学校",
+                "value": [
+                    120.727808,
+                    31.301806
+                ],
+                "address": " 苏州工业园区石港路18号"
+            },
+            {
+                "name": "苏州工业园区青剑湖学校",
+                "value": [
+                    120.725209,
+                    31.382828
+                ],
+                "address": " 苏州工业园区亭友街99号"
+            },
+            {
+                "name": "苏州工业园区东沙湖学校",
+                "value": [
+                    120.830034,
+                    31.321659
+                ],
+                "address": " 苏州工业园区东沙湖路99号"
+            },
+            {
+                "name": "苏州工业园区星洲学校",
+                "value": [
+                    120.747258,
+                    31.327398
+                ],
+                "address": " 苏州工业园区津梁街298号"
+            },
+            {
+                "name": "苏州工业园区星洋学校",
+                "value": [
+                    120.830034,
+                    31.321659
+                ],
+                "address": " 苏州工业园区港田路"
+            },
+            {
+                "name": "苏州工业园区莲花学校",
+                "value": [
+                    120.746921,
+                    31.291138
+                ],
+                "address": " 苏州工业园区莲池路1号"
+            },
+            {
+                "name": "苏州工业园区星海小学",
+                "value": [
+                    120.671111,
+                    31.314535
+                ],
+                "address": " 苏州工业园区苏茜路68号"
+            },
+            {
+                "name": "苏州工业园区第二实验小学",
+                "value": [
+                    120.741196,
+                    31.320511
+                ],
+                "address": " 苏州工业园区方洲路666号"
+            },
+            {
+                "name": "苏州工业园区翰林小学",
+                "value": [
+                    120.830034,
+                    31.321659
+                ],
+                "address": " 苏州工业园区科教创新区林泉路566号"
+            },
+            {
+                "name": "苏州工业园区方洲小学",
+                "value": [
+                    120.756425,
+                    31.316
+                ],
+                "address": " 苏州工业园区琉璃街6号"
+            },
+            {
+                "name": "苏州工业园区文萃小学",
+                "value": [
+                    120.66772,
+                    31.28566
+                ],
+                "address": " 苏州工业园区文萃路1号"
+            },
+            {
+                "name": "苏州工业园区娄葑实验小学",
+                "value": [
+                    120.676756,
+                    31.292746
+                ],
+                "address": " 苏州工业园区通园路葑春街2号"
+            },
+            {
+                "name": "苏州工业园区唯亭实验小学",
+                "value": [
+                    120.794261,
+                    31.371187
+                ],
+                "address": " 苏州工业园区夷亭路219号"
+            },
+            {
+                "name": "苏州工业园区跨塘实验小学",
+                "value": [
+                    120.696975,
+                    31.349798
+                ],
+                "address": " 苏州工业园区唯新路90号"
+            },
+            {
+                "name": "苏州工业园区胜浦实验小学",
+                "value": [
+                    120.837705,
+                    31.303236
+                ],
+                "address": " 苏州工业园区兴浦路16号"
+            },
+            {
+                "name": "苏州工业园区景城学校",
+                "value": [
+                    120.728722,
+                    31.33349
+                ],
+                "address": " 苏州工业园区九华路99号"
+            },
+            {
+                "name": "苏州工业园区独墅湖学校",
+                "value": [
+                    120.732931,
+                    31.256518
+                ],
+                "address": " 苏州工业园区启月街8号"
+            },
+            {
+                "name": "苏州工业园区星汇学校",
+                "value": [
+                    120.830034,
+                    31.321659
+                ],
+                "address": " 苏州工业园区方洲路428号"
+            },
+            {
+                "name": "苏州工业园区星澄学校",
+                "value": [
+                    120.75653,
+                    31.378804
+                ],
+                "address": " 苏州工业园区科智路18号"
+            },
+            {
+                "name": "苏州工业园区星浦学校",
+                "value": [
+                    120.830034,
+                    31.321659
+                ],
+                "address": " 苏州工业园区沽浦路6号"
+            },
+            {
+                "name": "苏州工业园区第三实验小学",
+                "value": [
+                    120.741344,
+                    31.380874
+                ],
+                "address": " 苏州工业园区夷浜路95号"
+            }
+        ]
+
+    let effectScatterList = {
+        name: "",
+        type: 'effectScatter',
+        coordinateSystem: 'bmap',
+        data: schoolDataList,
+        symbolSize: function (val) {
+            return 15;
+        },
+        showEffectOn: 'emphasis',
+        rippleEffect: {
+            brushType: 'stroke'
+        },
+        hoverAnimation: true,
+        label: {
+            normal: {
+                formatter: '{b}',
+                position: 'right',
+                show: false
+            },
+            emphasis: {
+                show: false,
+                backgroundColor: "white",
+                color: "white",
+                formatter: [
+                    '{title|{b}}{abg|}',
+                    '  {header|招生人数}{value|{c}}{rate|425}',
+                    '  {header|班级数 }{value|{d}}{rate|25}',
+                    '  {header|班容比 }{value|{a}}{rate|2}'
+                ].join('\n'),
+                rich: {
+                    title: {
+                        color: '#eee',
+                        align: 'center'
+                    },
+                    abg: {
+                        backgroundColor: '#373735',
+                        width: '100%',
+                        align: 'right',
+                        height: 25,
+                        borderColor: '#fff',
+                        borderWidth: 2,
+                        borderRadius: [4, 4, 0, 0]
+                    },
+                    header: {
+                        color: "#333",
+                        width: 40,
+                        height: 30,
+                        align: 'left',
+                        backgroundColor: {
+                            // image: weatherIcons.Sunny
+                        }
+                    },
+                    hr: {
+                        borderColor: '#777',
+                        width: '100%',
+                        borderWidth: 0.5,
+                        height: 0
+                    },
+                    value: {
+                        color: "#333",
+                        width: 40,
+                        padding: [0, 20, 0, 30],
+                        align: 'left'
+                    },
+                    rate: {
+                        color: "#333",
+                        width: 40,
+                        align: 'right',
+                        padding: [0, 10, 0, 0]
+                    },
+                }
+            }
+        },
+        itemStyle: {
+            normal: {
+                color: '#f4e925',
+                shadowBlur: 10,
+                shadowColor: '#333'
+            },
+            emphasis: {
+                show: true,
+                color: '#dd1c3b'
+            }
+        },
+        zlevel: 1
+    }
+    option.series.push(effectScatterList)
+
+    let myChart = echarts.init(document.getElementById('main'))
+    myChart.setOption(option)
+
+
+</script>
+
+</body>
+</html>

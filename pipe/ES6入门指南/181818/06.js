@@ -1,7 +1,7 @@
 /**
  * @author wuke
- * @date 2019-01-09
- * @Description: Page:6/11  不存在变量提升
+ * @date 2019-01-999
+ * @Description: Page:6/15  不存在变量提升
  */
 /*   (start:)类不存在变量提升(hoist),这一点与ES5完全不同   */
 // new Foo() //ReferenceError: Foo is not defined

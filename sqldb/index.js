@@ -24,6 +24,7 @@ db.File = db.koa2.import('../schema/file.js');
 db.PinYin = db.koa2.import('../schema/pinyin.js');
 db.School = db.koa2.import('../schema/school.js');
 db.Image = db.koa2.import('../schema/image.js');
+db.Drawings = db.koa2.import('../schema/drawings.js');
 
 //一对一
 db.User.hasOne(db.UserInfo)

@@ -3,9 +3,9 @@ const path = require("path");
 let request = require("request");
 
 const Mysql = require('../sqldb/index'); // 引入MySQL数据库
-const ImageDB = Mysql.Image;// 将Sequelize与表结构对应
+const DrawingsDB = Mysql.Drawings;// 将Sequelize与表结构对应
 
-const basePath = './raw_data/'
+const basePath = 'D://图片//raw_data'
 
 
 // loadFolder(basePath)
@@ -14,7 +14,7 @@ function loadFolder(basePath) {
     fs.readdir(basePath, function (err, files) {
         files.forEach((item, index) => {
             // console.log({item})
-            if (item == "porn") {
+            if (item == "drawings") {
                 initile(item)
             }
         })
@@ -40,14 +40,14 @@ function initile(fileName) {
             name: imgName,
             url: item
         }
-        let num = 110000
+        let num = 20000
         if (index > num && index <= (10000 + num)) {
             imageList.push(imageItem)
         }
     })
 
 
-    ImageDB.bulkCreate(imageList).catch(function (err) {
+    DrawingsDB.bulkCreate(imageList).catch(function (err) {
         console.log("发生错误：" + err);
     });
 
@@ -60,16 +60,15 @@ let loadObj = {
 }
 
 let loadHandler = {
-    set: function (target, key,  value, receiver) {
-        console.log('set', {target})
-        console.log('set', {value})
-        if(value >= 10){
+    set: function (target, key, value, receiver) {
+        console.log({value})
+        if (value >= 10) {
+            value = 0
             loadImg()
         }
         return Reflect.set(target, key, value, receiver);
     },
     get: function (target, key, receiver) {
-        console.log('get', {target})
         return Reflect.get(target, key, receiver);
     }
 }
@@ -79,32 +78,46 @@ loadImg()
 
 async function loadImg() {
 
-    loadEvent.num = 0
 
-    const dirPath = './raw_data/porn/IMAGES/'
+    const dirPath = 'D://图片//raw_data/drawings/IMAGES/'
 
-    let imageList = await ImageDB.findAndCount({
+    let imageList = await DrawingsDB.findAndCount({
         where: {
-            isdown: 0
+            isdown: {
+                $notLike:1
+            }
         },
         limit: 10
     })
 
 
     imageList.rows.forEach(item => {
-        let stream = fs.createWriteStream(path.join(dirPath, item.name));
-        request(item.url, {proxy: 'http://127.0.0.1:1080'}).pipe(stream).on("close", async function (err) {
-            console.log("文件[" + item.name + "]下载完毕");
-            let res = await  ImageDB.update({
-                isdown: 1
-            }, {
-                where: {
-                    id: item.id
-                }
-            })
-            if (res) {
+        let stream = fs.createWriteStream(path.join(dirPath, item.name.split('?')[0]));
+        request(item.url, {proxy: 'http://127.0.0.1:1080', timeout: 5000}, function (err) {
+            if(err){
+
+                console.log("错误",err.code)
+            }
+
+            if(err && err.code == 'ESOCKETTIMEDOUT'){
+                console.log("超时",item.name)
                 loadEvent.num = loadEvent.num + 1
             }
+            // loadEvent.num = loadEvent.num + 1
+            // process.exit(0);
+        }).pipe(stream).on("close", async function (err) {
+            console.log("下载",item.name)
+            if (err) {
+            } else {
+                let res = await  DrawingsDB.update({
+                    isdown: 1
+                }, {
+                    where: {
+                        id: item.id
+                    }
+                })
+            }
+            loadEvent.num = loadEvent.num + 1
         });
     })
 

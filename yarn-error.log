@@ -1,0 +1,77 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Ambersky_keke\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add transform-decorators-legacy -D
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jdk1.8.0_151\bin;C:\apache-maven-3.5.3\bin;C:\Program Files\Java\jdk1.8.0_151\jre\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files\Git\cmd;C:\Program Files\TortoiseSVN\bin;C:\Program Files\nodejs\;C:\WINDOWS\System32\OpenSSH\;C:\Users\Ambersky_keke\Anaconda3;C:\Users\Ambersky_keke\Anaconda3\Scripts;C:\web\mysql-8.0.11\bin;C:\Users\Ambersky_keke\AppData\Local\Programs\Python\Python36\Scripts\;C:\Users\Ambersky_keke\AppData\Local\Programs\Python\Python36\;C:\Users\Ambersky_keke\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Microsoft VS Code\bin;";C:\Program Files\Java\jdk1.8.0_151\bin;C:\Program Files\Java\jdk1.8.0_151\jre\bin";C:\Users\Ambersky_keke\AppData\Roaming\npm;C:\Program Files\Docker Toolbox;C:\Users\Ambersky_keke\AppData\Local\GitHubDesktop\bin;C:\Program Files\Docker Toolbox
+
+Yarn version: 
+  1.12.3
+
+Node version: 
+  8.10.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.npm.taobao.org/transform-decorators-legacy: Not found
+      at Request.params.callback [as _callback] (C:\Users\Ambersky_keke\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:65894:18)
+      at Request.self.callback (C:\Users\Ambersky_keke\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:129018:22)
+      at emitTwo (events.js:126:13)
+      at Request.emit (events.js:214:7)
+      at Request.<anonymous> (C:\Users\Ambersky_keke\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:129990:10)
+      at emitOne (events.js:116:13)
+      at Request.emit (events.js:211:7)
+      at IncomingMessage.<anonymous> (C:\Users\Ambersky_keke\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:129912:12)
+      at Object.onceWrapper (events.js:313:30)
+      at emitNone (events.js:111:20)
+
+npm manifest: 
+  {
+    "name": "amberkoa2",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+      "start": "node bin/www",
+      "dev": "./node_modules/.bin/nodemon bin/www",
+      "prd": "pm2 start bin/www",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+      "@alicloud/sms-sdk": "^1.1.6",
+      "@tensorflow-models/posenet": "^0.2.3",
+      "@tensorflow/tfjs": "^0.13.4",
+      "bcrypt": "^3.0.2",
+      "debug": "^2.6.3",
+      "ejs": "^2.6.1",
+      "kcors": "^2.2.2",
+      "koa": "^2.2.0",
+      "koa-bodyparser": "^3.2.0",
+      "koa-compress": "^3.0.0",
+      "koa-convert": "^1.2.0",
+      "koa-favicon": "^2.0.1",
+      "koa-json": "^2.0.2",
+      "koa-jwt": "^3.5.1",
+      "koa-logger": "^2.0.1",
+      "koa-onerror": "^1.2.1",
+      "koa-router": "^7.4.0",
+      "koa-static": "^3.0.0",
+      "koa-swig": "^2.2.1",
+      "koa-views": "^5.2.1",
+      "mysql2": "^1.6.4",
+      "pug": "^2.0.0-rc.1",
+      "sequelize": "^4.41.2",
+      "superagent": "^4.0.0-beta.5",
+      "superagent-proxy": "^2.0.0"
+    },
+    "devDependencies": {
+      "mysql": "^2.16.0",
+      "nodemon": "^1.8.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
